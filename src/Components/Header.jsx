@@ -36,13 +36,13 @@ const Header = ({ handleGetCoinButton, coin, setCoin }) => {
         if (tempPlayer.biddingPrice <= coin) {
           coin -= tempPlayer.biddingPrice;
           setCoin(coin);
-          toast.success(`${tempPlayer.name} Player Selected`);
+          toast.success(`${tempPlayer.name} selected`);
           setSelectedPlayersArr([...selectedPlayersArr, tempPlayer]);
         } else {
           toast.warn("Insufficient Balance");
         }
       } else {
-        toast.error("Maximum Player Selected!");
+        toast.warning("You can select only 6 players!");
       }
     } else {
       toast.error("Already Selected");
